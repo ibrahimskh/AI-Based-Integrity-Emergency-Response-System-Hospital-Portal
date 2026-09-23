@@ -1,0 +1,36 @@
+{
+  "name": "lifeline",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:hospital": "vite --config vite.hospital.config.js",
+    "dev:admin": "vite --config vite.admin.config.js",
+    "build": "vite build",
+    "build:hospital": "vite build --config vite.hospital.config.js --outDir dist-hospital",
+    "build:admin": "vite build --config vite.admin.config.js --outDir dist-admin",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "date-fns": "^4.4.0",
+    "lucide-react": "^1.47.0",
+    "react": "^19.2.8",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "autoprefixer": "^10.6.1",
+    "oxlint": "^1.81.0",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.0"
+  }
+}
