@@ -1,9 +1,7 @@
-import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './shared/context/AuthContext';
 import { ToastProvider } from './shared/context/ToastContext';
 import ProtectedRoute from './shared/components/ProtectedRoute';
-import { seedIfEmpty } from './shared/data/db';
 
 import HospitalLogin from './hospital-portal/pages/Login';
 import HospitalLayout from './hospital-portal/HospitalLayout';
@@ -17,8 +15,6 @@ import HospitalNotifications from './hospital-portal/pages/Notifications';
 import HospitalProfile from './hospital-portal/pages/Profile';
 
 export default function App() {
-  useEffect(() => { seedIfEmpty(); }, []);
-
   return (
     <AuthProvider>
       <ToastProvider>

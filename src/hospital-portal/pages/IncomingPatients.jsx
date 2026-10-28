@@ -34,7 +34,7 @@ export default function IncomingPatients() {
 
   const filtered = useMemo(() => {
     return patients.filter((p) => {
-      const matchesQuery = !query || p.name.toLowerCase().includes(query.toLowerCase()) || p.id.toLowerCase().includes(query.toLowerCase());
+      const matchesQuery = !query || (p.name || '').toLowerCase().includes(query.toLowerCase()) || (p.id || '').toLowerCase().includes(query.toLowerCase());
       const matchesStatus = statusFilter === 'all' || p.status === statusFilter;
       return matchesQuery && matchesStatus;
     }).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));

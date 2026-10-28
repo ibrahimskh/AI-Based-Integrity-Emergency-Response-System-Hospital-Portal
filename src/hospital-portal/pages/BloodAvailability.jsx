@@ -112,10 +112,6 @@ export default function BloodAvailability() {
 
   return (
     <div className="space-y-6">
-      <div className="bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-2 rounded-lg inline-flex items-center gap-1.5">
-        <span className="demo-badge">DEMO DATA</span> — connect Firebase to replace with live blood bank records.
-      </div>
-
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-2xl border border-lifeline-border bg-white shadow-sm p-5">
           <div className="w-10 h-10 rounded-xl bg-red-50 text-lifeline-red flex items-center justify-center mb-4">

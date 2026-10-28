@@ -5,7 +5,7 @@ import Button from './Button';
 import { Field, Input } from './Field';
 import { useAuth } from '../context/AuthContext';
 
-export default function LoginPage({ role, brandLabel, homePath, demoEmail }) {
+export default function LoginPage({ role, brandLabel, homePath, accountHint }) {
   const { login, user } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -78,10 +78,12 @@ export default function LoginPage({ role, brandLabel, homePath, demoEmail }) {
             {loading ? 'Signing in…' : 'Sign In'}
           </Button>
 
-          <div className="mt-5 text-xs text-lifeline-sub bg-slate-50 rounded-lg px-3 py-2.5 leading-relaxed">
-            <span className="font-bold text-lifeline-ink demo-badge">DEMO ACCOUNT</span><br />
-            {demoEmail} / demo1234
-          </div>
+          {accountHint && (
+            <div className="mt-5 text-xs text-lifeline-sub bg-slate-50 rounded-lg px-3 py-2.5 leading-relaxed">
+              <span className="font-bold text-lifeline-ink">FIREBASE ACCOUNT</span><br />
+              {accountHint}
+            </div>
+          )}
         </form>
       </div>
     </div>

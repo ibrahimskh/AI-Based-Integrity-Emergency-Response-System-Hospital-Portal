@@ -19,7 +19,7 @@ export default function HospitalDashboard() {
       const [hospitals, patients, ambulances, blood] = await Promise.all([
         dbGetAll('hospitals'), dbGetAll('patients'), dbGetAll('ambulances'), dbGetAll('blood_inventory'),
       ]);
-      const hospital = hospitals.find((h) => h.id === user.hospitalId);
+      const hospital = hospitals.find((h) => [h.id, h.recordId, h.docId].includes(user.hospitalId));
       setState({
         status: 'ready',
         hospital,
@@ -47,10 +47,6 @@ export default function HospitalDashboard() {
 
   return (
     <div className="space-y-6">
-      <div className="bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-2 rounded-lg inline-flex items-center gap-1.5">
-        <span className="demo-badge">DEMO DATA</span> — connect Firebase to replace with live hospital records.
-      </div>
-
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard icon={BedDouble} label="Total Beds" value={hospital?.totalBeds ?? '—'} tone="blue" />
         <StatCard icon={BedDouble} label="Available Beds" value={hospital?.availableBeds ?? '—'} tone="emerald" />
