@@ -603,13 +603,6 @@ export async function findUserProfile({ uid, email }) {
 
 export async function defaultHospitalId() {
   try {
-    const banks = await getDocs(query(collection(db, 'blood_banks'), limit(1)));
-    if (!banks.empty) {
-      const hid = banks.docs[0].data()?.hospital_id;
-      if (hid) return hid;
-    }
-  } catch { /* ignore */ }
-  try {
     const hospitals = await getDocs(query(collection(db, 'hospitals'), limit(1)));
     if (!hospitals.empty) {
       const d = hospitals.docs[0];

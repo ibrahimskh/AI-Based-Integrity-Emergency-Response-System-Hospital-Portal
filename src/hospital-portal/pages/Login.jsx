@@ -6,7 +6,7 @@ export default function HospitalLogin() {
       role="hospital"
       brandLabel="HOSPITAL PORTAL"
       homePath="/dashboard"
-      accountHint="hospital@test.com — use the password set in Firebase Authentication."
+      accountHint="hospital@lifeline.demo / Lifeline@123"
     />
   );
 }
